@@ -219,46 +219,6 @@ for userid in orders_resume.user_id.unique()[:10]:
     recomenacoes(userid, N=10)
 
 recomenacoes(90, N=10)
-'''
-Usuário: 90
-   product_id                                            product  Prediction
-0       28745                   (28746, On The Go Ice Raspberry)        81.0
-1       20119  (20120, DeTox Caffeine Free Organic Herbal Tea...        49.0
-2       39475                          (39476, 100% Juice Grape)        48.0
-3        6218                   (6219, Turkey Breast Medallions)        43.0
-4       19894                         (19895, Sliced Prosciutto)        41.0
-5       10768                (10769, Organic Lemon Sports Drink)        28.0
-6       36956         (36957, Hazelnut Meal/Flour Finely Ground)        27.0
-7         117                          (118, Ground Turkey Chub)        27.0
-8       25837             (25838, Snack N Go Applesauce Pouches)        23.0
-9       14870             (14871, Ibuprofen Liqui-Gels Capsules)        22.0
-------------------------------------------------------------------
-'''
-
-recomenacoes(90, N=1000, comparar_produtos=[21387, 49684, 1464, 10961, 45438, 26318, 5877, 1941, 47157, 18812])
-'''
-(26318, 'Pineapple Juice') 2.0
-(49684, 'Vodka, Triple Distilled, Twist of Vanilla') 2.0
-(1464, 'Special k Protein Cereal') 1.0
-(1941, 'Sea Salt And Vinegar Roasted Corn') 1.0
-(21387, 'Non-Fat Vanilla Yogurt') 1.0
-(5877, 'Organic Rose Maqui & Cocao Bar') 1.0
-(18812, 'Vegan Smoked Salmon') 1.0
-(10961, 'Five Cheese Tortellini') 1.0
-(47157, 'Espresso Roast Ground Coffee') 1.0
-------------------------------------------------------------------
-'''
-
-# Produtos mais comprados que o cluster compra
-'''
-for idx in range(0, ncluster):
-    print('Produtos para cluster: %s ' % (idx+1))
-    cp = lst_cluster[idx].drop('cluster',axis=1).mean()
-    lst_prod = cp.sort_values(ascending=False)[0:20].reset_index()['product_id'].tolist()
-    pdf = products_df[products_df['product_id'].isin(lst_prod)]
-    print(pdf[['product_id', 'product_name']].head(20))
-    print('--------------------------')
-'''
 
 # Resgata o corredor dos produtos
 recommendation = recomenacoes(90, N=50)

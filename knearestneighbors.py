@@ -152,21 +152,6 @@ def recomenacoes(userid, N=10):
 
 # Recomendções para um usuário específico
 recomenacoes(90)
-'''
-Usuário: 90
-   product_id                                            product  Prediction
-0       21386                    (21387, Non-Fat Vanilla Yogurt)        51.0
-1       49683  (49684, Vodka, Triple Distilled, Twist of Vani...        49.0
-2        1463                   (1464, Special k Protein Cereal)        37.0
-3       10960                    (10961, Five Cheese Tortellini)        33.0
-4       45437                (45438, Select 2% Reduced Fat Milk)        32.0
-5       26317                           (26318, Pineapple Juice)        31.0
-6        5876             (5877, Organic Rose Maqui & Cocao Bar)        30.0
-7        1940          (1941, Sea Salt And Vinegar Roasted Corn)        26.0
-8       47156              (47157, Espresso Roast Ground Coffee)        25.0
-9       18811                       (18812, Vegan Smoked Salmon)        25.0
-------------------------------------------------------------------
-'''
 
 # Para cada usuário 10 recomendações
 limite = 1
